@@ -36,7 +36,8 @@
         "staudenmeir/belongs-to-through": "~2.11.2",
         "stripe/stripe-php": "^8.7",
         "symfony/yaml": "~4.4.37",
-        "webmozart/assert": "~1.10.0"
+        "webmozart/assert": "~1.10.0",
+        "austinb/gameq": "~3.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
