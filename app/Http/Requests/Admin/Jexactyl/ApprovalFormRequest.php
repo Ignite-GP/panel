@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Admin\ignite;
+namespace Pterodactyl\Http\Requests\Admin\Ignite;
 
 use Pterodactyl\Http\Requests\Admin\AdminFormRequest;
 

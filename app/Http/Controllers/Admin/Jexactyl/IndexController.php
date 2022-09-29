@@ -1,5 +1,5 @@
 <?php
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;

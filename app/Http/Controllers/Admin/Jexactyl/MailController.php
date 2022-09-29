@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Exception;
 use Illuminate\View\View;
@@ -14,7 +14,7 @@ use Pterodactyl\Exceptions\DisplayException;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Pterodactyl\Providers\SettingsServiceProvider;
-use Pterodactyl\Http\Requests\Admin\ignite\MailFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\MailFormRequest;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 

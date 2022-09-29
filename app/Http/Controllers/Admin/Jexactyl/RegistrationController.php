@@ -1,13 +1,13 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Pterodactyl\Http\Controllers\Controller;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
-use Pterodactyl\Http\Requests\Admin\ignite\RegistrationFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\RegistrationFormRequest;
 
 class RegistrationController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Console\Kernel;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
-use Pterodactyl\Http\Requests\Admin\ignite\AdvancedFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\AdvancedFormRequest;
 
 class AdvancedController extends Controller
 {

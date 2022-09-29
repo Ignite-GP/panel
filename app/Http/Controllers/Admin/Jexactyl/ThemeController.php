@@ -1,13 +1,13 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\Contracts\Config\Repository;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\ignite\ThemeFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\ThemeFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class ThemeController extends Controller

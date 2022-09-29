@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Requests\Admin\ignite;
+namespace Pterodactyl\Http\Requests\Admin\Ignite;
 
 use Illuminate\Validation\Rule;
 use Pterodactyl\Http\Requests\Admin\AdminFormRequest;

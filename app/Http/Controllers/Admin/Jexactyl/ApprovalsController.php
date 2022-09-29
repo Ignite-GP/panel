@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Pterodactyl\Models\User;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\ignite\ApprovalFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\ApprovalFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class ApprovalsController extends Controller

@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\ignite;
+namespace Pterodactyl\Http\Controllers\Admin\Ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\ignite\StoreFormRequest;
+use Pterodactyl\Http\Requests\Admin\Ignite\StoreFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class StoreController extends Controller
