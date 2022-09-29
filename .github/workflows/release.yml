@@ -36,18 +36,9 @@ jobs:
           rm -rf node_modules/ test/ codecov.yml CODE_OF_CONDUCT.md CONTRIBUTING.md phpunit.xml Vagrantfile
           tar -czf panel.tar.gz * .env.example .eslintignore .eslintrc.js
 
-      - name: Extract changelog
-        id: extract_changelog
-        env:
-          REF: ${{ github.ref }}
-        run: |
-          sed -n "/^## ${REF:10}/,/^## /{/^## /b;p}" CHANGELOG.md > ./RELEASE_CHANGELOG
-          echo ::set-output name=version_name::`sed -nr "s/^## (${REF:10} .*)$/\1/p" CHANGELOG.md`
-
-      - name: Create checksum and add to changelog
+      - name: Create checksum
         run: |
           SUM=`sha256sum panel.tar.gz`
-          echo -e "\n#### SHA256 Checksum\n\n\`\`\`\n$SUM\n\`\`\`\n" >> ./RELEASE_CHANGELOG
           echo $SUM > checksum.txt
 
       - name: Create Release
