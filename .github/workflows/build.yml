@@ -2,8 +2,7 @@ name: Build Panel
 on:
   push:
     branches:
-      - 'develop'
-      - 'v2'
+      - 'main'
   pull_request:
 jobs:
   build:
