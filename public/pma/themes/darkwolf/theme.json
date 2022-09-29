@@ -1,0 +1,8 @@
+{
+    "name": "ignitedark",
+    "version": "5.2",
+    "description": "IgniteDark, A Dark Theme for phpMyAdmin",
+    "author": "xan.lua",
+    "url": "https://github.com/Xan-Lua",
+    "supports": ["5.2"]
+}
