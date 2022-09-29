@@ -198,6 +198,9 @@ export default () => {
                                         </NavLink>
                                     </Can>
                                 )}
+                                <a href={`/phpmyadmin`} target={'_blank'}>
+                                PhpMyAdmin
+                                </a>
                                 {rootAdmin && (
                                     <a href={'/admin/servers/view/' + serverId} rel='noreferrer' target={'_blank'}>
                                         <div css={tw`flex items-center justify-between`}>
