@@ -163,18 +163,6 @@ export default ({ server, className }: { server: Server; className?: string }) =
                                 </IconDescription>
                             </div>
                         </div>
-                        <div css={tw`flex-1 ml-12 sm:block hidden`}>
-                            <div css={tw`flex justify-center`}>
-                                <Icon.DownloadCloud size={20} css={tw`text-neutral-600`} />
-                                <IconDescription>{bytesToString(stats?.networkRxInBytes)}</IconDescription>
-                            </div>
-                        </div>
-                        <div css={tw`flex-1 ml-4 sm:block hidden`}>
-                            <div css={tw`flex justify-center`}>
-                                <Icon.UploadCloud size={20} css={tw`text-neutral-600`} />
-                                <IconDescription>{bytesToString(stats?.networkTxInBytes)}</IconDescription>
-                            </div>
-                        </div>
                     </React.Fragment>
                 </div>
             )}
