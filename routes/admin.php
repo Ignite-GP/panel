@@ -245,3 +245,20 @@ Route::group(['prefix' => 'nests'], function () {
     Route::delete('/egg/{egg:id}', [Admin\Nests\EggController::class, 'destroy']);
     Route::delete('/egg/{egg:id}/variables/{variable:id}', [Admin\Nests\EggVariableController::class, 'destroy']);
 });
+
+/*
+|--------------------------------------------------------------------------
+| Player Counter Controller Routes
+|--------------------------------------------------------------------------
+|
+| Endpoint: /admin/players
+|
+*/
+Route::group(['prefix' => 'players'], function () {
+    Route::get('/', [Admin\PlayerCounterController::class, 'index'])->name('admin.players');
+
+    Route::post('/create', [Admin\PlayerCounterController::class, 'create'])->name('admin.players.create');
+    Route::post('/update', [Admin\PlayerCounterController::class, 'update'])->name('admin.players.update');
+
+    Route::delete('/delete', [Admin\PlayerCounterController::class, 'delete'])->name('admin.players.delete');
+});

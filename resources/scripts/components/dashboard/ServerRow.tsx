@@ -2,6 +2,7 @@ import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import PlayerCounter from '@/components/dashboard/PlayerCounter';
 import { Server } from '@/api/server/getServer';
 import Spinner from '@/components/elements/Spinner';
 import GreyRowBox from '@/components/elements/GreyRowBox';
@@ -149,6 +150,7 @@ export default ({ server, className }: { server: Server; className?: string }) =
             {stats && (
                 <div css={tw`hidden col-span-12 sm:flex items-baseline justify-center items-center`}>
                     <React.Fragment>
+                    <PlayerCounter uuid={server.uuid} />
                         <div css={tw`flex-1 sm:block hidden`}>
                             <div css={tw`flex justify-center`}>
                                 <Icon.HardDrive size={20} css={tw`text-neutral-600`} />
@@ -161,18 +163,6 @@ export default ({ server, className }: { server: Server; className?: string }) =
                                 <IconDescription>
                                     {stats.uptime > 0 ? <UptimeDuration uptime={stats.uptime / 1000} /> : 'Offline'}
                                 </IconDescription>
-                            </div>
-                        </div>
-                        <div css={tw`flex-1 ml-12 sm:block hidden`}>
-                            <div css={tw`flex justify-center`}>
-                                <Icon.DownloadCloud size={20} css={tw`text-neutral-600`} />
-                                <IconDescription>{bytesToString(stats?.networkRxInBytes)}</IconDescription>
-                            </div>
-                        </div>
-                        <div css={tw`flex-1 ml-4 sm:block hidden`}>
-                            <div css={tw`flex justify-center`}>
-                                <Icon.UploadCloud size={20} css={tw`text-neutral-600`} />
-                                <IconDescription>{bytesToString(stats?.networkTxInBytes)}</IconDescription>
                             </div>
                         </div>
                     </React.Fragment>
