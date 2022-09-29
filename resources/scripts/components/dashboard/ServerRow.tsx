@@ -2,6 +2,7 @@ import tw from 'twin.macro';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import PlayerCounter from '@/components/dashboard/PlayerCounter';
 import { Server } from '@/api/server/getServer';
 import Spinner from '@/components/elements/Spinner';
 import GreyRowBox from '@/components/elements/GreyRowBox';
@@ -149,6 +150,7 @@ export default ({ server, className }: { server: Server; className?: string }) =
             {stats && (
                 <div css={tw`hidden col-span-12 sm:flex items-baseline justify-center items-center`}>
                     <React.Fragment>
+                    <PlayerCounter uuid={server.uuid} />
                         <div css={tw`flex-1 sm:block hidden`}>
                             <div css={tw`flex justify-center`}>
                                 <Icon.HardDrive size={20} css={tw`text-neutral-600`} />

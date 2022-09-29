@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import useWebsocketEvent from '@/plugins/useWebsocketEvent';
 import ConsoleShareContainer from './ConsoleShareContainer';
 import StatBlock from '@/components/server/console/StatBlock';
+import PlayerCounter from '@/components/server/console/PlayerCounter';
 import UptimeDuration from '@/components/server/UptimeDuration';
 import { bytesToString, ip, mbToBytes } from '@/lib/formatters';
 import { SocketEvent, SocketRequest } from '@/components/server/events';
@@ -107,6 +108,7 @@ export default ({ className }: { className?: string }) => {
                     <Bar style={{ width: cpuUsed === undefined ? '100%' : `${cpuUsed}%` }} />
                 )}
             </StatBlock>
+            <PlayerCounter />
             <StatBlock icon={faMemory} title={'Memory'}>
                 {status === 'offline' ? (
                     <span className={'text-gray-400'}>Offline</span>
