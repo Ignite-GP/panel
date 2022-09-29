@@ -23,7 +23,7 @@ jobs:
           git push -u origin $BRANCH
           sed -i "s/    'version' => 'canary',/    'version' => '${REF:11}',/" config/app.php
           git add config/app.php
-          git commit -m "New Jexactyl release inbound!"
+          git commit -m "New Ignite release inbound!"
           git push
 
       - name: Build assets
