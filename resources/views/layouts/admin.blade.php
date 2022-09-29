@@ -69,10 +69,10 @@
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.players') ?: 'active' }}">
-	                        <a href="{{ route('admin.players') }}">
-		                        <i data-feather="activity" style="margin-left: 12px;"></i>
-	                        </a>
-                        </li>
+	<a href="{{ route('admin.players') }}">
+		<i class="fa fa-user"></i> <span>Player Counter</span>
+	</a>
+</li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nodes') ?: 'active' }}">
                             <a href="{{ route('admin.nodes') }}">
                                 <i data-feather="layers" style="margin-left: 12px;"></i>
