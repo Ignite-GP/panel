@@ -1,5 +1,5 @@
 <?php
-namespace Pterodactyl\Http\Controllers\Admin\Jexactyl;
+namespace Pterodactyl\Http\Controllers\Admin\ignite;
 
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
@@ -67,7 +67,7 @@ class IndexController extends Controller
             'memoryTotal' => $memoryTotal,
         ]);
 
-        return view('admin.jexactyl.index', [
+        return view('admin.ignite.index', [
             'version' => $this->versionService,
             'servers' => $servers,
             'allocations' => $allocations,
@@ -91,10 +91,10 @@ class IndexController extends Controller
     public function update(BaseSettingsFormRequest $request): RedirectResponse
     {
         foreach ($request->normalize() as $key => $value) {
-            $this->settings->set('jexactyl::' . $key, $value);
+            $this->settings->set('ignite::' . $key, $value);
         }
 
-        $this->alert->success('Jexactyl Settings have been updated.')->flash();
+        $this->alert->success('ignite Settings have been updated.')->flash();
 
         return redirect()->route('admin.settings');
     }

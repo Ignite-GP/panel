@@ -55,7 +55,7 @@ class ServerEditService
         $resource = $request->input('resource');
 
         foreach ($resource as $r) {
-          $limit = $this->settings->get('jexactyl::store:limit:' . $r);
+          $limit = $this->settings->get('ignite::store:limit:' . $r);
 
           // Check if the amount requested goes over defined limits.
           if (($amount + $this->toServer($r, $server)) > $limit) return false;

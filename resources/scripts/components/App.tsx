@@ -15,7 +15,7 @@ import GlobalStylesheet from '@/assets/css/GlobalStylesheet';
 interface ExtendedWindow extends Window {
     SiteConfiguration?: SiteSettings;
     StoreConfiguration?: StorefrontSettings;
-    JexactylUser?: {
+    igniteUser?: {
         uuid: string;
         username: string;
         email: string;
@@ -35,21 +35,21 @@ interface ExtendedWindow extends Window {
 setupInterceptors(history);
 
 const App = () => {
-    const { JexactylUser, SiteConfiguration, StoreConfiguration } = window as ExtendedWindow;
+    const { igniteUser, SiteConfiguration, StoreConfiguration } = window as ExtendedWindow;
 
-    if (JexactylUser && !store.getState().user.data) {
+    if (igniteUser && !store.getState().user.data) {
         store.getActions().user.setUserData({
-            uuid: JexactylUser.uuid,
-            username: JexactylUser.username,
-            email: JexactylUser.email,
-            approved: JexactylUser.approved,
-            discordId: JexactylUser.discord_id,
-            language: JexactylUser.language,
-            rootAdmin: JexactylUser.root_admin,
-            useTotp: JexactylUser.use_totp,
-            referralCode: JexactylUser.referral_code,
-            createdAt: new Date(JexactylUser.created_at),
-            updatedAt: new Date(JexactylUser.updated_at),
+            uuid: igniteUser.uuid,
+            username: igniteUser.username,
+            email: igniteUser.email,
+            approved: igniteUser.approved,
+            discordId: igniteUser.discord_id,
+            language: igniteUser.language,
+            rootAdmin: igniteUser.root_admin,
+            useTotp: igniteUser.use_totp,
+            referralCode: igniteUser.referral_code,
+            createdAt: new Date(igniteUser.created_at),
+            updatedAt: new Date(igniteUser.updated_at),
         });
     }
 

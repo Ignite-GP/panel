@@ -117,7 +117,7 @@ export default () => {
             <StoreError
                 message={'No nodes are available for deployment. Try again later.'}
                 admin={'Ensure you have at least one node that can be deployed to.'}
-                link={'https://docs.jexactyl.com'}
+                link={'https://github.com/naysaku/ignite-gp'}
             />
         );
     }

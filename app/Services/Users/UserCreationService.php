@@ -75,8 +75,8 @@ class UserCreationService
             $token = $this->passwordBroker->createToken($user);
         }
 
-        if ($this->settings->get('jexactyl::approvals:enabled') === 'true' && $this->settings->get('jexactyl::approvals:webhook')) {
-            $name = $this->settings->get('settings::app:name', 'Jexactyl');
+        if ($this->settings->get('ignite::approvals:enabled') === 'true' && $this->settings->get('ignite::approvals:webhook')) {
+            $name = $this->settings->get('settings::app:name', 'ignite');
             $icon = $this->settings->get('settings::app:logo', 'https://avatars.githubusercontent.com/u/91636558');
             $webhook_data = [
                 'username' => $name,
@@ -107,7 +107,7 @@ class UserCreationService
             ];
 
             try {
-                Http::withBody(json_encode($webhook_data), 'application/json')->post($this->settings->get('jexactyl::approvals:webhook'));
+                Http::withBody(json_encode($webhook_data), 'application/json')->post($this->settings->get('ignite::approvals:webhook'));
             } catch (\Exception $e) {
             }
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Jexactyl;
+namespace Pterodactyl\Http\Controllers\Admin\ignite;
 
 use Illuminate\View\View;
 use Pterodactyl\Models\User;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\Jexactyl\ApprovalFormRequest;
+use Pterodactyl\Http\Requests\Admin\ignite\ApprovalFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class ApprovalsController extends Controller
@@ -29,15 +29,15 @@ class ApprovalsController extends Controller
     }
 
     /**
-     * Render the Jexactyl referrals interface.
+     * Render the ignite referrals interface.
      */
     public function index(): View
     {
         $users = User::where('approved', false)->get();
 
-        return view('admin.jexactyl.approvals', [
-            'enabled' => $this->settings->get('jexactyl::approvals:enabled', false),
-            'webhook' => $this->settings->get('jexactyl::approvals:webhook'),
+        return view('admin.ignite.approvals', [
+            'enabled' => $this->settings->get('ignite::approvals:enabled', false),
+            'webhook' => $this->settings->get('ignite::approvals:webhook'),
             'users' => $users,
         ]);
     }
@@ -51,11 +51,11 @@ class ApprovalsController extends Controller
     public function update(ApprovalFormRequest $request): RedirectResponse
     {
         foreach ($request->normalize() as $key => $value) {
-            $this->settings->set('jexactyl::approvals:' . $key, $value);
+            $this->settings->set('ignite::approvals:' . $key, $value);
         }
 
-        $this->alert->success('Jexactyl Approval settings have been updated.')->flash();
-        return redirect()->route('admin.jexactyl.approvals');
+        $this->alert->success('ignite Approval settings have been updated.')->flash();
+        return redirect()->route('admin.ignite.approvals');
     }
 
     /**
@@ -68,7 +68,7 @@ class ApprovalsController extends Controller
         // This gives the user access to the frontend.
 
         $this->alert->success($user->username . ' has been approved.')->flash();
-        return redirect()->route('admin.jexactyl.approvals');
+        return redirect()->route('admin.ignite.approvals');
     }
 
     /**
@@ -82,6 +82,6 @@ class ApprovalsController extends Controller
         // shouldn't be any present - as the user has been waiting for approval.
 
         $this->alert->success($user->username . ' has been denied.')->flash();
-        return redirect()->route('admin.jexactyl.approvals');
+        return redirect()->route('admin.ignite.approvals');
     }
 }

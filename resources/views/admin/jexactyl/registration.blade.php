@@ -1,23 +1,23 @@
 @extends('layouts.admin')
-@include('partials/admin.jexactyl.nav', ['activeTab' => 'registration'])
+@include('partials/admin.ignite.nav', ['activeTab' => 'registration'])
 
 @section('title')
-    Jexactyl Settings
+    ignite Settings
 @endsection
 
 @section('content-header')
-    <h1>User Registration<small>Configure settings for user registration on Jexactyl.</small></h1>
+    <h1>User Registration<small>Configure settings for user registration on ignite.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Jexactyl</li>
+        <li class="active">ignite</li>
     </ol>
 @endsection
 
 @section('content')
-@yield('jexactyl::nav')
+@yield('ignite::nav')
     <div class="row">
         <div class="col-xs-12">
-            <form action="{{ route('admin.jexactyl.registration') }}" method="POST">
+            <form action="{{ route('admin.ignite.registration') }}" method="POST">
                 <div class="box
                 @if($enabled == 'true')
                     box-success

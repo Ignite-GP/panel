@@ -1,12 +1,12 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Jexactyl;
+namespace Pterodactyl\Http\Controllers\Admin\ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\Jexactyl\StoreFormRequest;
+use Pterodactyl\Http\Requests\Admin\ignite\StoreFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class StoreController extends Controller
@@ -33,20 +33,20 @@ class StoreController extends Controller
     }
 
     /**
-     * Render the Jexactyl store settings interface.
+     * Render the ignite store settings interface.
      */
     public function index(): View
     {
-        $prefix = 'jexactyl::store:';
+        $prefix = 'ignite::store:';
 
-        return view('admin.jexactyl.store', [
+        return view('admin.ignite.store', [
             'enabled' => $this->settings->get($prefix.'enabled', false),
             'paypal_enabled' => $this->settings->get($prefix.'paypal:enabled', false),
             'stripe_enabled' => $this->settings->get($prefix.'stripe:enabled', false),
             'currency' => $this->settings->get($prefix.'currency', 'USD'),
 
-            'earn_enabled' => $this->settings->get('jexactyl::earn:enabled', false),
-            'earn_amount' => $this->settings->get('jexactyl::earn:amount', 1),
+            'earn_enabled' => $this->settings->get('ignite::earn:enabled', false),
+            'earn_amount' => $this->settings->get('ignite::earn:amount', 1),
 
             'cpu' => $this->settings->get($prefix.'cost:cpu', 100),
             'memory' => $this->settings->get($prefix.'cost:memory', 50),
@@ -74,12 +74,12 @@ class StoreController extends Controller
     public function update(StoreFormRequest $request): RedirectResponse
     {
         foreach ($request->normalize() as $key => $value) {
-            $this->settings->set('jexactyl::' . $key, $value);
+            $this->settings->set('ignite::' . $key, $value);
         }
 
-        $this->alert->warning('If you have enabled a payment gateway, please remember to configure them. <a href="https://documentation.jexactyl.com">Documentation</a>')->flash();
-        $this->alert->success('Jexactyl Storefront has been updated.')->flash();
+        $this->alert->warning('If you have enabled a payment gateway, please remember to configure them. <a href="https://documentation.ignite.com">Documentation</a>')->flash();
+        $this->alert->success('ignite Storefront has been updated.')->flash();
 
-        return redirect()->route('admin.jexactyl.store');
+        return redirect()->route('admin.ignite.store');
     }
 }

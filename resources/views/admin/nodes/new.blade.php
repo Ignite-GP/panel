@@ -60,7 +60,7 @@
                         <p class="text-muted small">By setting a node to <code>private</code> you will be denying the ability to auto-deploy to this node.
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Deployable via Jexactyl Store</label>
+                        <label class="form-label">Deployable via ignite Store</label>
                         <div>
                             <div class="radio radio-success radio-inline">
                                 <input type="radio" id="pDeployableTrue" value="1" name="deployable" checked>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <p class="text-muted"><small>
-                            This option allows you to control whether this node is visible via the Server Creation page of the Jexactyl Storefront.
+                            This option allows you to control whether this node is visible via the Server Creation page of the ignite Storefront.
                             If it is set to disabled, users will not be able to deploy on this node.
                         </small></p>
                     </div>

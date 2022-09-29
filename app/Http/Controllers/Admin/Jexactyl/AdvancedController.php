@@ -1,6 +1,6 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Jexactyl;
+namespace Pterodactyl\Http\Controllers\Admin\ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Console\Kernel;
 use Pterodactyl\Http\Controllers\Controller;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
-use Pterodactyl\Http\Requests\Admin\Jexactyl\AdvancedFormRequest;
+use Pterodactyl\Http\Requests\Admin\ignite\AdvancedFormRequest;
 
 class AdvancedController extends Controller
 {
@@ -60,7 +60,7 @@ class AdvancedController extends Controller
             || $this->config->get('recaptcha._shipped_website_key') == $this->config->get('recaptcha.website_key')
         ) { $warning = true; }
 
-        return view('admin.jexactyl.advanced', [
+        return view('admin.ignite.advanced', [
             'warning' => $warning,
             'logo' => $this->settings->get('settings::app:logo', 'https://avatars.githubusercontent.com/u/91636558'),
         ]);
@@ -79,6 +79,6 @@ class AdvancedController extends Controller
         $this->kernel->call('queue:restart');
         $this->alert->success('Advanced settings have been updated successfully and the queue worker was restarted to apply these changes.')->flash();
 
-        return redirect()->route('admin.jexactyl.advanced');
+        return redirect()->route('admin.ignite.advanced');
     }
 }

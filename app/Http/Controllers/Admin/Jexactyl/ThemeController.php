@@ -1,13 +1,13 @@
 <?php
 
-namespace Pterodactyl\Http\Controllers\Admin\Jexactyl;
+namespace Pterodactyl\Http\Controllers\Admin\ignite;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\Contracts\Config\Repository;
 use Pterodactyl\Http\Controllers\Controller;
-use Pterodactyl\Http\Requests\Admin\Jexactyl\ThemeFormRequest;
+use Pterodactyl\Http\Requests\Admin\ignite\ThemeFormRequest;
 use Pterodactyl\Contracts\Repository\SettingsRepositoryInterface;
 
 class ThemeController extends Controller
@@ -31,12 +31,12 @@ class ThemeController extends Controller
     }
 
     /**
-     * Render the Jexactyl settings interface.
+     * Render the ignite settings interface.
      */
     public function index(): View
     {
-        return view('admin.jexactyl.theme', [
-            'admin' => $this->settings->get('settings::theme:admin', 'jexactyl'),
+        return view('admin.ignite.theme', [
+            'admin' => $this->settings->get('settings::theme:admin', 'ignite'),
         ]);
     }
 
@@ -52,8 +52,8 @@ class ThemeController extends Controller
             $this->settings->set('settings::' . $key, $value);
         }
 
-        $this->alert->success('Jexactyl Admin Theme has been updated.')->flash();
+        $this->alert->success('ignite Admin Theme has been updated.')->flash();
 
-        return redirect()->route('admin.jexactyl.theme');
+        return redirect()->route('admin.ignite.theme');
     }
 }

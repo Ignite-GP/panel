@@ -2,9 +2,9 @@
 
 /*
 |--------------------------------------------------------------------------
-| Jexactyl Gateways
+| ignite Gateways
 |--------------------------------------------------------------------------
-| This configuration file is used to determine the settings for Jexactyl's
+| This configuration file is used to determine the settings for ignite's
 | payment gateways (Stripe and PayPal by default).
 */
 

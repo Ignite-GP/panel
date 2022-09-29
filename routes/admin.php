@@ -6,41 +6,41 @@ use Pterodactyl\Http\Middleware\Admin\Servers\ServerInstalled;
 
 /*
 |--------------------------------------------------------------------------
-| Jexactyl Controller Routes
+| ignite Controller Routes
 |--------------------------------------------------------------------------
 |
-| Endpoint: /admin/jexactyl
+| Endpoint: /admin/ignite
 |
 */
 Route::group(['prefix' => '/'], function () {
-    Route::get('/', [Admin\Jexactyl\IndexController::class, 'index'])->name('admin.index');
-    Route::get('/mail', [Admin\Jexactyl\MailController::class, 'index'])->name('admin.jexactyl.mail');
-    Route::get('/theme', [Admin\Jexactyl\ThemeController::class, 'index'])->name('admin.jexactyl.theme');
-    Route::get('/store', [Admin\Jexactyl\StoreController::class, 'index'])->name('admin.jexactyl.store');
-    Route::get('/server', [Admin\Jexactyl\ServerController::class, 'index'])->name('admin.jexactyl.server');
-    Route::get('/advanced', [Admin\Jexactyl\AdvancedController::class, 'index'])->name('admin.jexactyl.advanced');
-    Route::get('/discord', [Admin\Jexactyl\RegistrationController::class, 'index'])->name('admin.jexactyl.discord');
-    Route::get('/referrals', [Admin\Jexactyl\ReferralsController::class, 'index'])->name('admin.jexactyl.referrals');
-    Route::get('/registration', [Admin\Jexactyl\RegistrationController::class, 'index'])->name('admin.jexactyl.registration');
+    Route::get('/', [Admin\ignite\IndexController::class, 'index'])->name('admin.index');
+    Route::get('/mail', [Admin\ignite\MailController::class, 'index'])->name('admin.ignite.mail');
+    Route::get('/theme', [Admin\ignite\ThemeController::class, 'index'])->name('admin.ignite.theme');
+    Route::get('/store', [Admin\ignite\StoreController::class, 'index'])->name('admin.ignite.store');
+    Route::get('/server', [Admin\ignite\ServerController::class, 'index'])->name('admin.ignite.server');
+    Route::get('/advanced', [Admin\ignite\AdvancedController::class, 'index'])->name('admin.ignite.advanced');
+    Route::get('/discord', [Admin\ignite\RegistrationController::class, 'index'])->name('admin.ignite.discord');
+    Route::get('/referrals', [Admin\ignite\ReferralsController::class, 'index'])->name('admin.ignite.referrals');
+    Route::get('/registration', [Admin\ignite\RegistrationController::class, 'index'])->name('admin.ignite.registration');
     
     Route::group(['prefix' => '/approvals'], function () {
-        Route::get('/', [Admin\Jexactyl\ApprovalsController::class, 'index'])->name('admin.jexactyl.approvals');
+        Route::get('/', [Admin\ignite\ApprovalsController::class, 'index'])->name('admin.ignite.approvals');
 
-        Route::patch('/', [Admin\Jexactyl\ApprovalsController::class, 'update'])->name('admin.jexactyl.approvals');
-        Route::post('/deny/{id}', [Admin\Jexactyl\ApprovalsController::class, 'deny'])->name('admin.jexactyl.approvals.deny');
-        Route::post('/approve/{id}', [Admin\Jexactyl\ApprovalsController::class, 'approve'])->name('admin.jexactyl.approvals.approve');
+        Route::patch('/', [Admin\ignite\ApprovalsController::class, 'update'])->name('admin.ignite.approvals');
+        Route::post('/deny/{id}', [Admin\ignite\ApprovalsController::class, 'deny'])->name('admin.ignite.approvals.deny');
+        Route::post('/approve/{id}', [Admin\ignite\ApprovalsController::class, 'approve'])->name('admin.ignite.approvals.approve');
     });
 
-    Route::post('/mail/test', [Admin\Jexactyl\MailController::class, 'test'])->name('admin.jexactyl.mail.test');
+    Route::post('/mail/test', [Admin\ignite\MailController::class, 'test'])->name('admin.ignite.mail.test');
 
-    Route::patch('/mail', [Admin\Jexactyl\MailController::class, 'update'])->name('admin.jexactyl.mail');
-    Route::patch('/theme', [Admin\Jexactyl\ThemeController::class, 'update'])->name('admin.jexactyl.theme');
-    Route::patch('/store', [Admin\Jexactyl\StoreController::class, 'update'])->name('admin.jexactyl.store');
-    Route::patch('/server', [Admin\Jexactyl\ServerController::class, 'update'])->name('admin.jexactyl.server');
-    Route::patch('/advanced', [Admin\Jexactyl\AdvancedController::class, 'update'])->name('admin.jexactyl.advanced');
-    Route::patch('/discord', [Admin\Jexactyl\RegistrationController::class, 'update'])->name('admin.jexactyl.discord');
-    Route::patch('/referrals', [Admin\Jexactyl\ReferralsController::class, 'update'])->name('admin.jexactyl.referrals');
-    Route::patch('/registration', [Admin\Jexactyl\RegistrationController::class, 'update'])->name('admin.jexactyl.registration');
+    Route::patch('/mail', [Admin\ignite\MailController::class, 'update'])->name('admin.ignite.mail');
+    Route::patch('/theme', [Admin\ignite\ThemeController::class, 'update'])->name('admin.ignite.theme');
+    Route::patch('/store', [Admin\ignite\StoreController::class, 'update'])->name('admin.ignite.store');
+    Route::patch('/server', [Admin\ignite\ServerController::class, 'update'])->name('admin.ignite.server');
+    Route::patch('/advanced', [Admin\ignite\AdvancedController::class, 'update'])->name('admin.ignite.advanced');
+    Route::patch('/discord', [Admin\ignite\RegistrationController::class, 'update'])->name('admin.ignite.discord');
+    Route::patch('/referrals', [Admin\ignite\ReferralsController::class, 'update'])->name('admin.ignite.referrals');
+    Route::patch('/registration', [Admin\ignite\RegistrationController::class, 'update'])->name('admin.ignite.registration');
 });
 
 /*

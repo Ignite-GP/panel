@@ -34,7 +34,7 @@ class StoreCreationService {
     }
 
     /**
-     * Creates a server on Jexactyl using the Storefront.
+     * Creates a server on ignite using the Storefront.
      */
     public function handle(CreateServerRequest $request): JsonResponse
     {
@@ -72,7 +72,7 @@ class StoreCreationService {
             // mark this server as enabled - so that if the renewal system is enabled again,
             // it'll be part of the renewable servers.
             'renewable' => true,
-            'renewal' => $this->settings->get('jexactyl::renewal:default'),
+            'renewal' => $this->settings->get('ignite::renewal:default'),
         ];
 
         foreach (EggVariable::where('egg_id', $egg->id)->get() as $var) {

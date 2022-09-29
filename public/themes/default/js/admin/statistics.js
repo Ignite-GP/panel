@@ -1,4 +1,4 @@
-// Jexactyl Software. (https://jexactyl.com)
+// ignite Software. (https://github.com/naysaku/ignite-gp)
 // Green: #189a1c
 // Gray: hsl(211, 22%, 21%)
 

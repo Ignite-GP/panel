@@ -9,7 +9,7 @@ use Pterodactyl\Http\Controllers\Api\Application\ApplicationApiController;
 class ApprovalsController extends ApplicationApiController
 {
     /**
-     * Render the Jexactyl referrals interface.
+     * Render the ignite referrals interface.
      */
     public function index(): User
     {

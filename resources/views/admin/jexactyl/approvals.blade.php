@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@include('partials/admin.jexactyl.nav', ['activeTab' => 'approvals'])
+@include('partials/admin.ignite.nav', ['activeTab' => 'approvals'])
 
 @section('title')
     User Approvals
@@ -9,13 +9,13 @@
     <h1>User Approvals<small>Allow or deny requests to create accounts.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Jexactyl</li>
+        <li class="active">ignite</li>
     </ol>
 @endsection
 
 @section('content')
-    @yield('jexactyl::nav')
-    <form action="{{ route('admin.jexactyl.approvals') }}" method="POST">
+    @yield('ignite::nav')
+    <form action="{{ route('admin.ignite.approvals') }}" method="POST">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box
@@ -89,7 +89,7 @@
                                         {{ $user->created_at->diffForHumans() }}
                                     </td>
                                     <td class="text-center">
-                                        <form id="approveform" action="{{ route('admin.jexactyl.approvals.approve', $user->id) }}" method="POST">
+                                        <form id="approveform" action="{{ route('admin.ignite.approvals.approve', $user->id) }}" method="POST">
                                             {!! csrf_field() !!}
                                             <button id="approvalApproveBtn" class="btn btn-xs btn-default">
                                                 <i class="fa fa-check text-success"></i>
@@ -97,7 +97,7 @@
                                         </form>
                                     </td>
                                     <td class="text-center">
-                                        <form id="denyform" action="{{ route('admin.jexactyl.approvals.deny', $user->id) }}" method="POST">
+                                        <form id="denyform" action="{{ route('admin.ignite.approvals.deny', $user->id) }}" method="POST">
                                             {!! csrf_field() !!}
                                             <button id="approvalDenyBtn" class="btn btn-xs btn-default">
                                                 <i class="fa fa-times text-danger"></i>

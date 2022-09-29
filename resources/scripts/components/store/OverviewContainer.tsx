@@ -29,7 +29,7 @@ const OverviewContainer = () => {
     return (
         <PageContentBlock title={'Storefront Overview'}>
             <h1 className={'j-left text-5xl'}>👋 Hey, {username}!</h1>
-            <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>Welcome to the Jexactyl storefront.</h3>
+            <h3 className={'j-left text-2xl mt-2 text-neutral-500'}>Welcome to the ignite storefront.</h3>
             <StoreContainer className={'j-right lg:grid lg:grid-cols-3 my-10'}>
                 <TitledGreyBox title={'Total CPU'} className={'mt-8 sm:mt-0'}>
                     <Wrapper>
