@@ -11,6 +11,7 @@ import FlashMessageRender from '@/components/FlashMessageRender';
 import styled from 'styled-components/macro';
 import classNames from 'classnames';
 import styles from '@/components/server/console/style.module.css';
+import Button from '@/components/elements/Button';
 import Modal from '@/components/elements/Modal';
 
 const Code = styled.code`${tw`font-mono py-1 px-2 bg-neutral-900 rounded text-sm inline-block m-2`}`;
