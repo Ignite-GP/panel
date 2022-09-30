@@ -9,7 +9,6 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-zip": "*",
-        "austinb/gameq": "~3.0",
         "aws/aws-sdk-php": "^3.171",
         "doctrine/dbal": "~2.13.9",
         "fruitcake/laravel-cors": "~3.0.0",
