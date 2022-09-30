@@ -18,12 +18,12 @@ jobs:
         run: |
           BRANCH=release/${REF:10}
           git config --local user.email "github@ignitionhost.ro"
-          git config --local user.name "Ignite Releases"
+          git config --local user.name "Ignite GP"
           git checkout -b $BRANCH
           git push -u origin $BRANCH
           sed -i "s/    'version' => 'canary',/    'version' => '${REF:11}',/" config/app.php
           git add config/app.php
-          git commit -m "New Ignite release inbound!"
+          git commit -m "New Ignite GP version"
           git push
 
       - name: Build assets
@@ -44,9 +44,10 @@ jobs:
           sed -n "/^## ${REF:10}/,/^## /{/^## /b;p}" CHANGELOG.md > ./RELEASE_CHANGELOG
           echo ::set-output name=version_name::`sed -nr "s/^## (${REF:10} .*)$/\1/p" CHANGELOG.md`
 
-      - name: Create checksum
+      - name: Create checksum and add to changelog
         run: |
           SUM=`sha256sum panel.tar.gz`
+          echo -e "\n#### SHA256 Checksum\n\n\`\`\`\n$SUM\n\`\`\`\n" >> ./RELEASE_CHANGELOG
           echo $SUM > checksum.txt
 
       - name: Create Release
