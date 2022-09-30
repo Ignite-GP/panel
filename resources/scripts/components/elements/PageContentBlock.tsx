@@ -26,7 +26,7 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                 </ContentContainer>
                 <ContentContainer css={tw`text-sm text-center my-4`}>
                     <p css={tw`text-neutral-500 sm:float-left`}>
-                        &copy; <a href={'https://ignitionhost.ro}>Ignite.</a>
+                        &copy; <a href={'https://ignitionhost.ro'}>Ignite.</a>
                     </p>
 
                 </ContentContainer>
