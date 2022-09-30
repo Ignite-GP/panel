@@ -30,14 +30,14 @@ class RegisterController extends AbstractLoginController
      */
     public function register(RegisterRequest $request): JsonResponse
     {
-        if ($this->settings->get('jexactyl::registration:enabled') == 'false') {
+        if ($this->settings->get('ignite::registration:enabled') == 'false') {
             throw new DisplayException('Unable to register: Registration is currently disabled.');
         };
 
-        $prefix = 'jexactyl::registration:';
+        $prefix = 'ignite::registration:';
         $approved = true;
 
-        if ($this->settings->get('jexactyl::approvals:enabled') == 'true') {
+        if ($this->settings->get('ignite::approvals:enabled') == 'true') {
             $approved = false;
         };
 
@@ -45,7 +45,7 @@ class RegisterController extends AbstractLoginController
             'approved' => $approved,
             'email' => $request->input('email'),
             'username' => $request->input('user'),
-            'name_first' => 'Jexactyl',
+            'name_first' => 'Ignite',
             'name_last' => 'User',
             'password' => $request->input('password'),
             'ip' => $request->getClientIp(),

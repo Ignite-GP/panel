@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@include('partials/admin.jexactyl.nav', ['activeTab' => 'advanced'])
+@include('partials/admin.ignite.nav', ['activeTab' => 'advanced'])
 
 @section('title')
     Advanced
@@ -9,13 +9,13 @@
     <h1>Advanced<small>Configure advanced settings for the Panel.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Jexactyl</li>
+        <li class="active">Ignite</li>
     </ol>
 @endsection
 
 @section('content')
-    @yield('jexactyl::nav')
-        <form action="{{ route('admin.jexactyl.advanced') }}" method="POST">
+    @yield('ignite::nav')
+        <form action="{{ route('admin.ignite.advanced') }}" method="POST">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">

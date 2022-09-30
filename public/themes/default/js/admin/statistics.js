@@ -1,4 +1,4 @@
-// Jexactyl Software. (https://jexactyl.com)
+// Ignite Software. (https://ignitionhost.ro)
 // Green: #189a1c
 // Gray: hsl(211, 22%, 21%)
 

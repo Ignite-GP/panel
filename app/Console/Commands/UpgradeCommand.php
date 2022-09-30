@@ -10,7 +10,7 @@ use Symfony\Component\Console\Helper\ProgressBar;
 
 class UpgradeCommand extends Command
 {
-    protected const DEFAULT_URL = 'https://github.com/jexactyl/jexactyl/releases/%s/panel.tar.gz';
+    protected const DEFAULT_URL = 'https://github.com/naysaku/ignite-gp/releases/%s/panel.tar.gz';
 
     /** @var string */
     protected $signature = 'p:upgrade
@@ -21,11 +21,11 @@ class UpgradeCommand extends Command
         {--skip-download : If set no archive will be downloaded.}';
 
     /** @var string */
-    protected $description = 'Downloads a new archive for Jexactyl from GitHub and then executes the normal upgrade commands.';
+    protected $description = 'Downloads a new archive for Ignite from GitHub and then executes the normal upgrade commands.';
 
     /**
      * Executes an upgrade command which will run through all of our standard
-     * commands for Jexactyl and enable users to basically just download
+     * commands for Ignite and enable users to basically just download
      * the archive and execute this and be done.
      *
      * This places the application in maintenance mode as well while the commands

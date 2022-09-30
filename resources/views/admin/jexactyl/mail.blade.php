@@ -1,8 +1,8 @@
 @extends('layouts.admin')
-@include('partials/admin.jexactyl.nav', ['activeTab' => 'mail'])
+@include('partials/admin.ignite.nav', ['activeTab' => 'mail'])
 
 @section('title')
-    Jexactyl Mail
+Ignite Mail
 @endsection
 
 @section('content-header')
@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-    @yield('jexactyl::nav')
+    @yield('ignite::nav')
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-info">

@@ -1,23 +1,23 @@
 @extends('layouts.admin')
-@include('partials/admin.jexactyl.nav', ['activeTab' => 'server'])
+@include('partials/admin.ignite.nav', ['activeTab' => 'server'])
 
 @section('title')
-    Jexactyl Servers
+    Ignite Servers
 @endsection
 
 @section('content-header')
-    <h1>Server Settings<small>Configure Jexactyl's server settings.</small></h1>
+    <h1>Server Settings<small>Configure Ignite's server settings.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li class="active">Jexactyl</li>
+        <li class="active">Ignite</li>
     </ol>
 @endsection
 
 @section('content')
-    @yield('jexactyl::nav')
+    @yield('ignite::nav')
     <div class="row">
         <div class="col-xs-12">
-            <form action="{{ route('admin.jexactyl.server') }}" method="POST">
+            <form action="{{ route('admin.ignite.server') }}" method="POST">
                 <div class="box
                     @if($enabled == 'true')
                         box-success
