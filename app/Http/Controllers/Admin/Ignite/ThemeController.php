@@ -31,12 +31,12 @@ class ThemeController extends Controller
     }
 
     /**
-     * Render the Jexactyl settings interface.
+     * Render the Ignite settings interface.
      */
     public function index(): View
     {
-        return view('admin.jexactyl.theme', [
-            'admin' => $this->settings->get('settings::theme:admin', 'jexactyl'),
+        return view('admin.ignite.theme', [
+            'admin' => $this->settings->get('settings::theme:admin', 'ignite'),
         ]);
     }
 
@@ -52,8 +52,8 @@ class ThemeController extends Controller
             $this->settings->set('settings::' . $key, $value);
         }
 
-        $this->alert->success('Jexactyl Admin Theme has been updated.')->flash();
+        $this->alert->success('Ignite Admin Theme has been updated.')->flash();
 
-        return redirect()->route('admin.jexactyl.theme');
+        return redirect()->route('admin.ignite.theme');
     }
 }

@@ -115,7 +115,7 @@ class AccountController extends ClientApiController
     {
         return new JsonResponse([
             'https://discord.com/api/oauth2/authorize?'
-            . 'client_id=' . $this->settings->get('jexactyl::discord:id')
+            . 'client_id=' . $this->settings->get('ignite::discord:id')
             . '&redirect_uri=' . route('api:client.account.discord.callback')
             . '&response_type=code&scope=identify%20email%20guilds%20guilds.join&prompt=none',
         ], 200, [], null, false);
@@ -124,8 +124,8 @@ class AccountController extends ClientApiController
     public function discordCallback(Request $request): RedirectResponse
     {
         $code = Http::asForm()->post('https://discord.com/api/oauth2/token', [
-            'client_id' => $this->settings->get('jexactyl::discord:id'),
-            'client_secret' => $this->settings->get('jexactyl::discord:secret'),
+            'client_id' => $this->settings->get('ignite::discord:id'),
+            'client_secret' => $this->settings->get('ignite::discord:secret'),
             'grant_type' => 'authorization_code',
             'code' => $request->input('code'),
             'redirect_uri' => route('api:client.account.discord.callback'),

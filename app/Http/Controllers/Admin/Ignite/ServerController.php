@@ -33,13 +33,13 @@ class ServerController extends Controller
     }
 
     /**
-     * Render the Jexactyl settings interface.
+     * Render the Ignite settings interface.
      */
     public function index(): View
     {
-        $prefix = 'jexactyl::renewal:';
+        $prefix = 'ignite::renewal:';
     
-        return view('admin.jexactyl.server', [
+        return view('admin.ignite.server', [
             'enabled' => $this->settings->get($prefix . 'enabled', false),
             'default' => $this->settings->get($prefix . 'default', 7),
             'cost' => $this->settings->get($prefix . 'cost', 20),
@@ -57,11 +57,11 @@ class ServerController extends Controller
     public function update(ServerFormRequest $request): RedirectResponse
     {
         foreach ($request->normalize() as $key => $value) {
-            $this->settings->set('jexactyl::renewal:' . $key, $value);
+            $this->settings->set('ignite::renewal:' . $key, $value);
         }
 
-        $this->alert->success('Jexactyl Server settings has been updated.')->flash();
+        $this->alert->success('Ignite Server settings has been updated.')->flash();
 
-        return redirect()->route('admin.jexactyl.server');
+        return redirect()->route('admin.ignite.server');
     }
 }

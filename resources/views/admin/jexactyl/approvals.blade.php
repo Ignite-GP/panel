@@ -89,7 +89,7 @@
                                         {{ $user->created_at->diffForHumans() }}
                                     </td>
                                     <td class="text-center">
-                                        <form id="approveform" action="{{ route('admin.jexactyl.approvals.approve', $user->id) }}" method="POST">
+                                        <form id="approveform" action="{{ route('admin.ignite.approvals.approve', $user->id) }}" method="POST">
                                             {!! csrf_field() !!}
                                             <button id="approvalApproveBtn" class="btn btn-xs btn-default">
                                                 <i class="fa fa-check text-success"></i>
@@ -97,7 +97,7 @@
                                         </form>
                                     </td>
                                     <td class="text-center">
-                                        <form id="denyform" action="{{ route('admin.jexactyl.approvals.deny', $user->id) }}" method="POST">
+                                        <form id="denyform" action="{{ route('admin.ignite.approvals.deny', $user->id) }}" method="POST">
                                             {!! csrf_field() !!}
                                             <button id="approvalDenyBtn" class="btn btn-xs btn-default">
                                                 <i class="fa fa-times text-danger"></i>

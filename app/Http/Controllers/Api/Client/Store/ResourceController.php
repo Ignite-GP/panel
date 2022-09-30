@@ -46,9 +46,9 @@ class ResourceController extends ClientApiController
     public function earn(StoreEarnRequest $request)
     {
         $user = $request->user();
-        $amount = $this->settings->get('jexactyl::earn:amount', 0);
+        $amount = $this->settings->get('ignite::earn:amount', 0);
 
-        if ($this->settings->get('jexactyl::earn:enabled') == 'false') {
+        if ($this->settings->get('ignite::earn:enabled') == 'false') {
             throw new DisplayException('Credit earning is currently disabled.');
             return;
         };
@@ -101,7 +101,7 @@ class ResourceController extends ClientApiController
      */
     protected function getPrice(string $resource): int
     {
-        $prefix = 'jexactyl::store:cost:';
+        $prefix = 'ignite::store:cost:';
 
         switch ($resource) {
             case 'cpu':

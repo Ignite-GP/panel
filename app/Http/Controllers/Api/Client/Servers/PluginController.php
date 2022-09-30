@@ -44,7 +44,7 @@ class PluginController extends ClientApiController
         $api = 'https://api.spiget.org/v2/search/resources/' . urlencode($query) .'?page=1&size=18';
 
         try {
-            $res = $client->request('GET', $api, ['headers' => ['User-Agent' => 'jexactyl/3.x']] );
+            $res = $client->request('GET', $api, ['headers' => ['User-Agent' => 'ignite/3.x']] );
         } catch (DisplayException $e) {
             throw new DisplayException('Couldn\'t find any results for that query.');
         };

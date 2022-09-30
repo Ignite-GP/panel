@@ -13,7 +13,7 @@ class AddDefaultServerDeletionKeyToSettingsTable extends Migration
     {
         DB::table('settings')->insertOrIgnore(
             array(
-                'key' => 'jexactyl::renewal:deletion',
+                'key' => 'ignite::renewal:deletion',
                 'value' => 'true',
             ),
         );
@@ -27,7 +27,7 @@ class AddDefaultServerDeletionKeyToSettingsTable extends Migration
     public function down()
     {
         DB::table('settings')
-            ->where('key', 'jexactyl::renewal:deletion')
+            ->where('key', 'ignite::renewal:deletion')
             ->delete();
     }
 }

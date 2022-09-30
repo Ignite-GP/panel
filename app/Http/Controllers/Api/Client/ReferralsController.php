@@ -31,7 +31,7 @@ class ReferralsController extends ClientApiController
      */
     public function use(ClientApiRequest $request): JsonResponse
     {
-        $reward = $this->settings->get('jexactyl::referrals:reward', 0);
+        $reward = $this->settings->get('ignite::referrals:reward', 0);
         $code = $request->input('code');
 
         if ($request->user()->referral_code) {

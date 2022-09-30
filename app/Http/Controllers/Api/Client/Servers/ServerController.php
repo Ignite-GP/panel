@@ -77,7 +77,7 @@ class ServerController extends ClientApiController
             throw new DisplayException('You are not authorized to perform this action.');
         };
 
-        if ($this->settings->get('jexactyl::renewal:deletion') != 'true') {
+        if ($this->settings->get('ignite::renewal:deletion') != 'true') {
             throw new DisplayException('This feature has been locked by administrators.');
         };
 

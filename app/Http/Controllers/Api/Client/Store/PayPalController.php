@@ -33,7 +33,7 @@ class PayPalController extends ClientApiController
      */
     public function purchase(PayPalRequest $request): JsonResponse
     {
-        if ($this->settings->get('jexactyl::store:paypal:enabled') != 'true') {
+        if ($this->settings->get('ignite::store:paypal:enabled') != 'true') {
             throw new DisplayException('Unable to purchase via PayPal: module not enabled');
         }
 

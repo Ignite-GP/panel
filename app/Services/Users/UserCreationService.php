@@ -107,7 +107,7 @@ class UserCreationService
             ];
 
             try {
-                Http::withBody(json_encode($webhook_data), 'application/json')->post($this->settings->get('jexactyl::approvals:webhook'));
+                Http::withBody(json_encode($webhook_data), 'application/json')->post($this->settings->get('ignite::approvals:webhook'));
             } catch (\Exception $e) {
             }
         }

@@ -68,7 +68,7 @@ class MailController extends Controller
      */
     public function index(): View
     {
-        return view('admin.jexactyl.mail', [
+        return view('admin.ignite.mail', [
             'disabled' => $this->config->get('mail.driver') !== 'smtp',
         ]);
     }
